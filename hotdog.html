@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HW03 Joe's Hotdogs</title>
+</head>
+
+<body>
+
+    <script language="javascript">
+        
+        var discount = 0;
+        hotdog_price = 3.25;
+        fries_prices = 2.00;
+        soda_prices = 1.50;
+        mass_tax = 0.0625;
+
+        hotdogs = prompt ("How many hotdogs you want?", "0");
+        fries = prompt ("How many fries you want?", "0");
+        sodas = prompt ("How many sodas you want?", "0");
+        
+        if (hotdogs == null) {
+            hotdogs = 0;
+        }
+        
+        if (fries == null) {
+            fries = 0;
+        }
+        
+        if (sodas == null) {
+            sodas = 0;
+        }
+
+        subtotal = (hotdog_price * hotdogs) + (fries_prices * fries) + (soda_prices * sodas);
+        
+        subtotal_original = subtotal;
+        
+        if (subtotal >= 20) {
+            discount = 1;
+            discounted_amount = subtotal * 0.1
+            subtotal = subtotal * 0.9;
+        }
+        
+        final_price = subtotal * (1 + mass_tax);
+        
+        document.write ("You have ordered " + hotdogs + " hotdogs, " + fries + " fries, and " + sodas + " sodas!");
+        document.write ("<br>");
+        
+        if (discount == 1) {
+            document.write ("10% discount has applied!");
+            document.write ("<br>");
+            document.write ("You saved $" + discounted_amount.toFixed(2) 
+                            + "!" );
+            document.write ("<br>");
+            document.write ("Subtotal : $" + subtotal.toFixed(2));
+            document.write ("<br>");
+            document.write ("Mass. Meal Tax : 6.25%");
+            document.write ("<br>");
+            document.write ("Your total : $" + final_price.toFixed(2));
+        } else {
+            document.write ("Subtotal : $" + subtotal_original.toFixed(2));
+            document.write ("<br>");
+            document.write ("Mass. Meal Tax : 6.25%");
+            document.write ("<br>");
+            document.write ("Your total : $" + final_price.toFixed(2));
+        }
+        
+
+</script>
+
+
+
+</body>
+</html>
